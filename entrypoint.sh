@@ -2,6 +2,9 @@
 
 git clone --quiet https://github.com/$REPO &> /dev/null
 
+echo "Generating commit range for the following tag range:"
+echo $TAG_RANGE
+
 changelog=$(generate-changelog $* --tag $TAG_RANGE --file -)
 
 echo $changelog
