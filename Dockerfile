@@ -1,6 +1,8 @@
 FROM alpine:3
 
-RUN apk --no-cache add git nodejs-npm
+LABEL org.opencontainers.image.source="https://github.com/ScottBrenner/generate-changelog-action"
+
+RUN apk --no-cache add git npm
 RUN npm install -g generate-changelog
 
 COPY LICENSE README.md /
